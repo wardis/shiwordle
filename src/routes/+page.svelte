@@ -77,6 +77,10 @@
 			.querySelector(`[data-key="${event.key}" i]`)
 			?.dispatchEvent(new MouseEvent('click', { cancelable: true }));
 	}
+
+	/**	Handle hint */
+	let showHint = false;
+	$: hint = data.hint;
 </script>
 
 <svelte:window on:keydown={keydown} />
@@ -130,6 +134,14 @@
 				{/each}
 			</div>
 		{/each}
+	</div>
+
+	<div class="hint">
+		{#if showHint}
+			{hint}
+		{/if}
+
+		<a on:click={() => (showHint = !showHint)}> hint </a>
 	</div>
 
 	<div class="controls">
@@ -206,7 +218,8 @@
 		color: var(--color-text);
 	}
 
-	.how-to-play::before {
+	.how-to-play::before,
+	.hint a::before {
 		content: 'i';
 		display: inline-block;
 		font-size: 0.8em;
@@ -221,6 +234,15 @@
 		margin: 0 0.5em 0 0;
 		position: relative;
 		top: -0.05em;
+	}
+
+	.hint a {
+		color: var(--color-text);
+	}
+
+	.hint a::before {
+		content: 'i';
+		display: inline-block;
 	}
 
 	.grid {
