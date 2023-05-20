@@ -349,13 +349,13 @@
 
 	.keyboard button,
 	.keyboard button:disabled {
-		--size: min(8vw, 4vh, 40px);
+		--size: min(10vw, 4vh, 40px);
 		background-color: white;
 		color: black;
 		width: var(--size);
 		border: none;
 		border-radius: 2px;
-		font-size: calc(var(--size) * 0.5);
+		font-size: calc(var(--size) * 0.6);
 		margin: 0;
 	}
 
