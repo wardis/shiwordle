@@ -1,10 +1,11 @@
-import { words, allowed } from './words.server';
+import { words, allowed, wordsTranslations } from './words.server';
 
 export class Game {
 	index: number;
 	guesses: string[];
 	answers: string[];
 	answer: string;
+	hint: string;
 
 	/**
 	 * Create a game object from the player's cookie, or initialise a new game
@@ -23,6 +24,7 @@ export class Game {
 		}
 
 		this.answer = words[this.index];
+		this.hint = wordsTranslations[this.answer as keyof typeof wordsTranslations];
 	}
 
 	/**
