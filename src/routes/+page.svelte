@@ -349,7 +349,7 @@
 
 	.keyboard button,
 	.keyboard button:disabled {
-		--size: min(10vw, 4vh, 40px);
+		--size: min(10vw, 5vh, 40px);
 		background-color: white;
 		color: black;
 		width: var(--size);
