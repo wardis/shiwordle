@@ -178,7 +178,7 @@
 					back
 				</button>
 
-				{#each ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] as row}
+				{#each ['azertyuiop', 'qsdfghjklm', 'wxcvbn'] as row}
 					<div class="row">
 						{#each row as letter}
 							<button
@@ -230,7 +230,8 @@
 		color: var(--color-text);
 	}
 
-	.how-to-play::before {
+	.how-to-play::before,
+	.hint a::before {
 		content: 'i';
 		display: inline-block;
 		font-size: 0.8em;
@@ -381,7 +382,7 @@
 	.keyboard button[data-key='backspace'] {
 		position: absolute;
 		bottom: 0;
-		width: calc(1.5 * var(--size));
+		width: calc(2 * var(--size));
 		height: calc(1 / 3 * (100% - 2 * var(--gap)));
 		text-transform: uppercase;
 		font-size: calc(0.3 * var(--size));
@@ -389,11 +390,11 @@
 	}
 
 	.keyboard button[data-key='enter'] {
-		right: calc(50% + 3.5 * var(--size) + 0.8rem);
+		right: calc(50% + 3 * var(--size) + 0.8rem);
 	}
 
 	.keyboard button[data-key='backspace'] {
-		left: calc(50% + 3.5 * var(--size) + 0.8rem);
+		left: calc(50% + 3 * var(--size) + 0.8rem);
 	}
 
 	.keyboard button[data-key='enter']:disabled {

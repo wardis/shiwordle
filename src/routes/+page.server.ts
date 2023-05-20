@@ -20,7 +20,10 @@ export const load = (({ cookies }) => {
 		/**
 		 * The correct answer, revealed if the game is over
 		 */
-		answer: game.answers.length >= 6 ? game.answer : null
+		answer: game.answers.length >= 6 ? game.answer : null,
+
+		/**	The correct answer hint (translation) */
+		hint: game.hint
 	};
 }) satisfies PageServerLoad;
 
