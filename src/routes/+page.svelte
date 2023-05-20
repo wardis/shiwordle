@@ -77,6 +77,15 @@
 			.querySelector(`[data-key="${event.key}" i]`)
 			?.dispatchEvent(new MouseEvent('click', { cancelable: true }));
 	}
+
+	/**	Handle hint */
+	$: showHint = false;
+	$: hint = data.hint;
+	function toggleHint() {
+		if (data.answers.length >= 1) {
+			showHint = !showHint;
+		}
+	}
 </script>
 
 <svelte:window on:keydown={keydown} />
@@ -132,12 +141,27 @@
 		{/each}
 	</div>
 
+	<div class="hint">
+		{#if data.answers.length >= 1 && showHint}
+			{hint}
+		{/if}
+
+		{#if data.answers.length >= 1}
+			<a href="/" on:click={toggleHint}> hint </a>
+		{/if}
+	</div>
+
 	<div class="controls">
 		{#if won || data.answers.length >= 6}
 			{#if !won && data.answer}
 				<p>the answer was "{data.answer}"</p>
 			{/if}
-			<button data-key="enter" class="restart selected" formaction="?/restart">
+			<button
+				data-key="enter"
+				class="restart selected"
+				formaction="?/restart"
+				on:click={() => (showHint = false)}
+			>
 				{won ? 'you won :)' : `game over :(`} play again?
 			</button>
 		{:else}
@@ -221,6 +245,19 @@
 		margin: 0 0.5em 0 0;
 		position: relative;
 		top: -0.05em;
+	}
+
+	.hint {
+		min-height: 2em;
+	}
+
+	.hint a {
+		color: var(--color-text);
+	}
+
+	.hint a::before {
+		content: 'i';
+		display: inline-block;
 	}
 
 	.grid {
