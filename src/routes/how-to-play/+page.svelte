@@ -1,14 +1,14 @@
 <svelte:head>
-	<title>How to play Sverdle</title>
-	<meta name="description" content="How to play Sverdle" />
+	<title>How to play Shiwordle</title>
+	<meta name="description" content="How to play Shiwordle" />
 </svelte:head>
 
 <div class="text-column">
-	<h1>How to play Sverdle</h1>
+	<h1>How to play Shiwordle</h1>
 
 	<p>
-		Sverdle is a clone of <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>, the
-		word guessing game. To play, enter a five-letter English word. For example:
+		Shiwordle is a clone of <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>,
+		the word guessing game. To play, enter a five-letter English word. For example:
 	</p>
 
 	<div class="example">
@@ -37,7 +37,7 @@
 	<p>This time we guessed right! You have <strong>six</strong> guesses to get the word.</p>
 
 	<p>
-		Unlike the original Wordle, Sverdle runs on the server instead of in the browser, making it
+		Unlike the original Wordle, Shiwordle runs on the server instead of in the browser, making it
 		impossible to cheat. It uses <code>&lt;form&gt;</code> and cookies to submit data, meaning you can
 		even play with JavaScript disabled!
 	</p>
